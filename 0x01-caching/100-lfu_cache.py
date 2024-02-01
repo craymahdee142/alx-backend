@@ -37,7 +37,7 @@ class LFUCache(BaseCaching):
                 else:
                     discard = lfu_keys[0]
 
-                print("DISCARD: {}".format(self.usage[-1]))
+                print("DISCARD: {}".format(discard))
                 del self.cache_data[discard]
                 del self.usage[self.usage.index(discard)]
                 del self.frequency[discard]
