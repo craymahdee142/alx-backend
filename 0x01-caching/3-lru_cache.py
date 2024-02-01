@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-clas LRUCache(BaseCaching):
+class LRUCache(BaseCaching):
     """
     LIFO Caching for caching system
     """
@@ -12,7 +12,7 @@ clas LRUCache(BaseCaching):
         """
         Initialize with parent class method super init
         """
-        super.__init__()
+        super().__init__()
         self.usage = []
 
     def put(self, key, item):
@@ -24,16 +24,16 @@ clas LRUCache(BaseCaching):
             if length >= BaseCaching.MAX_ITEMS and key is not self.cache_data:
                 print("DISCARD: {}".format(self.usage[0]))
                 del self.cache_data[self.usage[0]]
-                def self.usage[0]
+                del self.usage[0]
             if key in self.usage:
                 del self.usage[self.usage.index(key)]
-            self.order.append(key)
+            self.usage.append(key)
             self.cache_data[key] = item
 
-    def get(self, get):
+    def get(self, key):
         """Return the value linked to a given key or None"""
         if key is not None and key in self.cache_data.keys():
             del self.usage[self.usage.index(key)]
-            self.order.append(key)
+            self.usage.append(key)
             return self.cache_data[key]
         return None

@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-clas LIFOCache(BaseCaching):
+class LIFOCache(BaseCaching):
     """
     LIFO Caching for caching system
     """
@@ -12,7 +12,7 @@ clas LIFOCache(BaseCaching):
         """
         Initialize with parent class method super init
         """
-        super.__init__()
+        super().__init__()
         self.order = []
 
     def put(self, key, item):
@@ -24,7 +24,7 @@ clas LIFOCache(BaseCaching):
             if length >= BaseCaching.MAX_ITEMS and key is not self.cache_data:
                 print("DISCARD: {}".format(self.order[-1]))
                 del self.cache_data[self.order[-1]]
-                def self.order[-1]
+                del self.order[-1]
             if key in self.order:
                 del self.order[self.order.index(key)]
             self.order.append(key)

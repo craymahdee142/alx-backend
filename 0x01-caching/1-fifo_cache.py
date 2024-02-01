@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-clas FIFOCache(BaseCaching):
+class FIFOCache(BaseCaching):
     """
     FIFO Caching for caching system
     """
@@ -12,7 +12,7 @@ clas FIFOCache(BaseCaching):
         """
         Initialize with parent class method super init
         """
-        super.__init__()
+        super().__init__()
         self.order = []
 
     def put(self, key, item):
@@ -24,7 +24,7 @@ clas FIFOCache(BaseCaching):
             if length >= BaseCaching.MAX_ITEMS and key is not self.cache_data:
                 print("DISCARD: {}".format(self.order[0]))
                 del self.cache_data[self.order[0]]
-                def self.order[0]
+                del self.order[0]
             self.order.append(key)
             self.cache_data[key] = item
 
